@@ -1,0 +1,221 @@
+body {
+    background-color: f5f5f7;
+}
+nav {
+  background-color: white;
+}
+.cont {
+    margin-top: 100px;
+}
+
+.oner {
+    margin: 40px 5%;
+}
+
+#telefonlar {
+    margin-top: 100px;
+    text-align: center;
+}
+
+.card-img-top {
+    height: 300px;
+    width: max-content;
+    margin: 30px auto;
+}
+
+.card {
+    transition-duration: 0.3s;
+    border-bottom: none;
+    border-top: none;
+}
+.card:hover {
+    background-color: e5e5e5;
+}
+
+.onerilen {
+    text-align: center;
+}
+
+.telefon {
+    text-decoration: none;
+    color: black;
+    transition-duration: 0.3s;
+}
+
+.telefon:hover {
+    color: 52a0e4;
+}
+
+table {
+    width: 100%;
+    text-align: center;
+  }
+  
+  th {
+    background-color: white;
+    text-align: center;
+    padding: 10px;
+    height: 60px;
+    overflow: hidden;
+    word-break: normal;
+  }
+  
+  td {
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 5px;
+    border-color: c4c4c4;
+    border-left: none;
+    border-right: none;
+    border-width: 1px;
+    overflow: hidden;
+    word-break: normal;
+    background-color: f5f5f7;
+  }
+  td:first-child {
+    padding-left: 4%;
+    text-align: left;
+    font-size: 20px;
+    font-weight: 700;
+  }
+  
+  .table-wrap {
+    margin: 1.5rem auto;
+  }
+  
+  .sort-header::-moz-selection {
+    background: 0 0;
+  }
+  .sort-header::selection {
+    background: 0 0;
+  }
+  .sort-header {
+    cursor: pointer;
+  }
+  .sort-header:after {
+    content: "";
+    float: right;
+    margin: 7px 0.25rem 0 0.5rem;
+    border-width: 0 5px 5px;
+    border-style: solid;
+    border-color: #000 transparent;
+    opacity: 0.6;
+    visibility: hidden;
+  }
+  .sort-header:hover:after {
+    visibility: visible;
+  }
+  .sort-asc:after,
+  .sort-asc:hover:after,
+  .sort-desc:after {
+    visibility: visible;
+    opacity: 1;
+  }
+  .sort-desc:after {
+    border-bottom: none;
+    border-width: 5px 5px 0;
+  }
+  
+  .btn-wrap {
+    text-align: center;
+  }
+
+  .nav-item {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.nav-item:hover {
+    transform: scale(1.05);
+    transform: matrix3d();
+}
+
+.navbar-brand {
+    transition: all 0.6s ease;
+    cursor: pointer;
+    color: 52a0e4;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.05);
+    transform: matrix3d();
+}
+
+.navbar-nav {
+    justify-content: center;
+}
+
+.listtel {
+    height: 100px;
+    width: max-content;
+    margin-right: 30px;
+}
+
+.navlogo {
+    height: 40px;
+    width: max-content;
+}
+
+.nav-link {
+    margin:  0px 30px;
+}
+
+footer {
+  background-color: white;
+  padding: 30px;
+  margin-top: 100px;
+}
+
+.genel {
+  margin-top: 100px;
+}
+
+.telfoto {
+  height: 200px;
+  width: max-content;
+}
+
+.ozet {
+  margin-top: 60px;
+}
+
+.teknik {
+  margin-top: 100px;
+  background-color: white;
+  padding: 20px 30px;
+}
+
+#phoneImage {
+  height: 200px;
+  width: max-content;
+}
+
+#phoneImage2 {
+  height: 200px;
+  width: max-content;
+}
+
+#phoneImage3 {
+  height: 200px;
+  width: max-content;
+}
+
+.telfotos {
+  margin-top: 100px;
+  background-color: white;
+  padding: 100px;
+}
+
+.specss {
+  margin-top: 100px;
+  background-color: white;
+  padding: 100px;
+}
+
+h1 {
+  margin-top: 100px;
+}
+
+.kulsart {
+  margin-top: 100px;
+}

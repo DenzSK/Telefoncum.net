@@ -1,0 +1,222 @@
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="icon" type="image/x-icon" href="img/Tlogo.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="pageTitle">Telefon Detayları</title>
+  <header>
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a href="index.html"><img class="navlogo" src="img/logo.png" alt="Telefoncum.net"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="kullanim-sartlari.html">Kullanım Şartları</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="hakkimizda.html">Hakkımızda</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Telefon Özellikleri</h1>
+    <div class="row telfotos">
+      <div class="col">
+    <img id="phoneImage" alt="Telefon Resmi">
+  </div>
+  <div class="col">
+    <img id="phoneImage2" alt="Telefon 2. Resmi">
+  </div>
+  <div class="col">
+    <img id="phoneImage3" alt="Telefon 2. Resmi">
+  </div>
+  <div class="col">
+    <h2 id="modelName"></h2>
+  </div>
+    </div>
+    <div class="row specss">
+      <div class="col">
+    <div class="specs">
+      <h3>Teknik Özellikler</h3>
+      <ul id="technicalSpecs"></ul>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="specs">
+      <h3>Kamera Özellikleri</h3>
+      <ul id="cameraSpecs"></ul>
+    </div>
+  </div>
+  </div>
+</div>
+
+<script>
+  var selectedModel = localStorage.getItem('selectedModel');
+  var selectedModelName = localStorage.getItem('selectedModelName');
+
+  document.getElementById('pageTitle').innerText = selectedModelName;
+
+  document.getElementById('phoneImage').src = 'Telefonlar/' + selectedModel + '.webp';
+  document.getElementById('phoneImage2').src = 'Telefonlar/' + selectedModel + '2.webp';
+  document.getElementById('phoneImage3').src = 'Telefonlar/' + selectedModel + '3.webp';
+  document.getElementById('modelName').innerText = selectedModelName;
+
+  updatePhoneDetails(selectedModel);
+  
+  function updatePhoneDetails(model) {
+    var technicalSpecs = getTechnicalSpecs(model);
+    var cameraSpecs = getCameraSpecs(model);
+
+    var technicalSpecsList = document.getElementById('technicalSpecs');
+    technicalSpecsList.innerHTML = '';
+    technicalSpecs.forEach(function (spec) {
+      var listItem = document.createElement('li');
+      listItem.innerText = spec;
+      technicalSpecsList.appendChild(listItem);
+    });
+
+    var cameraSpecsList = document.getElementById('cameraSpecs');
+    cameraSpecsList.innerHTML = '';
+    cameraSpecs.forEach(function (spec) {
+      var listItem = document.createElement('li');
+      listItem.innerText = spec;
+      cameraSpecsList.appendChild(listItem);
+    });
+  }
+
+  function getTechnicalSpecs(model) {
+    if (model === 'iphone15promax') {
+      return ['Ekran: 6.7 inç OLED', 'İşlemci: Apple A17 Pro', 'RAM: 8GB', 'Depolama: 256 GB / 512GB / 1 TB'];
+    } else if (model === 'galaxys23ultra') {
+      return ['Ekran: 6.8 inç AMOLED', 'İşlemci: Qualcomm Snapdragon 8 Gen 2', 'RAM: 12 GB', 'Depolama: 256 GB / 512 GB / 1 TB'];
+    } else if (model === 'xiaomi13pro') {
+      return ['Ekran: 6.73 inç AMOLED', 'İşlemci: Qualcomm Snapdragon 8 Gen 2', 'RAM: 12 GB', 'Depolama: 512 GB'];
+    } else if (model === 'iphone14promax') {
+      return ['Ekran: 6.7 inç OLED', 'İşlemci: Apple A16 Bionic', 'RAM: 6 GB', 'Depolama: 256 GB / 512 GB / 1 TB'];
+    } else if (model === 'oneplus11') {
+      return ['Ekran: 6.7 inç AMOLED', 'İşlemci: Qualcomm Snapdragon 8 Gen 2', 'RAM: 6 GB', 'Depolama: 256 GB / 512 GB / 1 TB'];
+    } else if (model === 'huaweip60pro') {
+      return ['Ekran: 6.67 inç OLED', 'İşlemci: Qualcomm Snapdragon 8+ Gen 1', 'RAM: 12 GB', 'Depolama: 256 GB / 512 GB'];
+    } else if (model === 'pocof5pro') {
+      return ['Ekran: 6.67 inç AMOLED', 'İşlemci: Qualcomm Snapdragon 8+ Gen 1', 'RAM: 12 GB', 'Depolama: 256 GB / 512 GB'];
+    } else if (model === 'iphone13') {
+      return ['Ekran: 6.1 inç OLED', 'İşlemci: Apple A15 Bionic', 'RAM: 4 GB', 'Depolama: 128 GB / 256 GB / 512 GB'];
+    } else if (model === 'galaxys20fe') {
+      return ['Ekran: 6.5 inç Super AMOLED', 'İşlemci: Qualcomm Snapdragon 865', 'RAM: 6 GB', 'Depolama: 128 GB / 256 GB'];
+    } else if (model === 'iphone12') {
+      return ['Ekran: 6.1 inç OLED', 'İşlemci: Apple A14 Bionic', 'RAM: 4 GB', 'Depolama: 64 GB / 128 GB / 256 GB'];
+    } else if (model === 'galaxya73-5g') {
+      return ['Ekran: 6.7 inç Super AMOLED', 'İşlemci: Qualcomm Snapdragon 778G', 'RAM: 8 GB', 'Depolama: 128 GB / 256 GB'];
+    } else if (model === 'galaxya53-5g') {
+      return ['Ekran: 6.5 inç Super AMOLED', 'İşlemci: Samsung Exynos 1280', 'RAM: 8 GB', 'Depolama: 128 GB'];
+    } else if (model === 'galaxya33-5g') {
+      return ['Ekran: 6.4 inç Super AMOLED', 'İşlemci: Samsung Exynos 1280', 'RAM: 6 GB', 'Depolama: 128 GB'];
+    } else if (model === 'pocox4pro5g') {
+      return ['Ekran: 6.67 inç AMOLED', 'İşlemci: Qualcomm Snapdragon 695', 'RAM: 8 GB', 'Depolama: 128 GB / 256 GB'];
+    } else if (model === 'redminote10pro5g') {
+      return ['Ekran: 6.6 inç IPS LCD', 'İşlemci: MediaTek Dimensity 1100', 'RAM: 6 GB', 'Depolama: 128 GB'];
+    } else if (model === 'iphone11') {
+      return ['Ekran: 6.1 inç IPS LCD', 'İşlemci: Apple A13 Bionic', 'RAM: 4 GB', 'Depolama: 64 GB / 128 GB / 256 GB'];
+    } else if (model === 'galaxys9plus') {
+      return ['Ekran: 6.2 inç Super AMOLED', 'İşlemci: Samsung Exynos 9 Series 9810', 'RAM: 6 GB', 'Depolama: 64 GB / 128 GB / 256 GB'];
+    } else if (model === 'redminote11pro') {
+      return ['Ekran: 6.67 inç AMOLED', 'İşlemci: MediaTek Helio G96', 'RAM: 6 GB', 'Depolama: 128 GB'];
+    } else if (model === 'camon18p') {
+      return ['Ekran: 6.8 inç IPS LCD', 'İşlemci: MediaTek Helio G96', 'RAM: 8 GB', 'Depolama: 128 GB'];
+    } else if (model === 'galaxya51') {
+      return ['Ekran: 6.5 inç Super AMOLED', 'İşlemci: Samsung Exynos 7 Series 9611', 'RAM: 6 GB', 'Depolama: 128 GB / 256 GB'];
+    } else if (model === 'mi8') {
+      return ['Ekran: 6.21 inç AMOLED', 'İşlemci: Qualcomm Snapdragon 845', 'RAM: 6 GB', 'Depolama: 64 GB / 128 GB'];
+    } else if (model === 'honormagic6pro') {
+      return ['Ekran: 6.8 inç OLED', 'İşlemci: Qualcomm Snapdragon 8 Gen 3', 'RAM: 12 GB', 'Depolama: 256 GB'];
+    } else if (model === 'redminote12pro') {
+      return ['Ekran: 6.67 inç AMOLED', 'İşlemci: Qualcomm Snapdragon 732G', 'RAM: 8 GB', 'Depolama: 256 GB'];
+    } else if (model === 'phone2') {
+      return ['Ekran: 6.7 inç OLED', 'İşlemci: Qualcomm Snapdragon 8+ Gen 1', 'RAM: 12 GB', 'Depolama: 256 GB / 512 GB'];
+    } else if (model === 'realmegt5') {
+      return ['Ekran: 6.74 inç AMOLED', 'İşlemci: Qualcomm Snapdragon 8 Gen 2', 'RAM: 12 GB', 'Depolama: 256 GB'];
+    } else if (model === 'findx5') {
+      return ['Ekran: 6.7 inç AMOLED', 'İşlemci: Qualcomm Snapdragon 8 Gen 1', 'RAM: 12 GB', 'Depolama: 256 GB'];
+    } else {
+      return [];
+    }
+  }
+
+  function getCameraSpecs(model) {
+    if (model === 'iphone15promax') {
+      return ['Arka Kamera: 48 MP + 12 MP + 12 MP','Ön Kamera: 12 MP'];
+    } else if (model === 'galaxys23ultra') {
+      return ['Arka Kamera: 200 MP + 12 MP + 10 MP + 10 MP', 'Ön Kamera: 12 MP'];
+    } else if (model === 'xiaomi13pro') {
+      return ['Arka Kamera: 50 MP + 50 MP + 50 MP', 'Ön Kamera: 32 MP'];
+    } else if (model === 'iphone14promax') {
+      return ['Arka Kamera: 48 MP + 12 MP + 12 MP', 'Ön Kamera: 12 MP'];
+    } else if (model === 'oneplus11') {
+      return ['Arka Kamera: 50 MP + 48 MP + 32 MP', 'Ön Kamera: 16 MP'];
+    } else if (model === 'huaweip60pro') {
+      return ['Arka Kamera: 48 MP + 13 MP + 48 MP', 'Ön Kamera: 13 MP'];
+    } else if (model === 'pocof5pro') {
+      return ['Arka Kamera: 64 MP + 8 MP + 2 MP', 'Ön Kamera: 16 MP'];
+    } else if (model === 'iphone13') {
+      return ['Arka Kamera: 12 MP + 12 MP', 'Ön Kamera: 12 MP'];
+    } else if (model === 'galaxys20fe') {
+      return ['Arka Kamera: 12 MP + 12 MP + 8 MP', 'Ön Kamera: 32 MP'];
+    } else if (model === 'iphone12') {
+      return ['Arka Kamera: 12 MP + 12 MP', 'Ön Kamera: 12 MP'];
+    } else if (model === 'galaxya73-5g') {
+      return ['Arka Kamera: 108 MP + 12 MP + 5 MP + 5 MP', 'Ön Kamera: 32 MP'];
+    } else if (model === 'galaxya53-5g') {
+      return ['Arka Kamera: 64 MP + 12 MP + 5 MP + 5 MP', 'Ön Kamera: 32 MP'];
+    } else if (model === 'galaxya33-5g') {
+      return ['Arka Kamera: 48 MP + 8 MP + 5 MP + 2 MP', 'Ön Kamera: 13 MP'];
+    } else if (model === 'pocox4pro5g') {
+      return ['Arka Kamera: 108 MP + 8 MP + 2 MP', 'Ön Kamera: 16 MP'];
+    } else if (model === 'redminote10pro5g') {
+      return ['Arka Kamera: 64 MP + 8 MP + 2 MP', 'Ön Kamera: 16 MP'];
+    } else if (model === 'iphone11') {
+      return ['Arka Kamera: 12 MP + 12 MP', 'Ön Kamera: 12 MP'];
+    } else if (model === 'galaxys9plus') {
+      return ['Arka Kamera: 12 MP + 12 MP', 'Ön Kamera: 8 MP'];
+    } else if (model === 'redminote11pro') {
+      return ['Arka Kamera: 108 MP + 8 MP + 2 MP + 2 MP', 'Ön Kamera: 16 MP'];
+    } else if (model === 'camon18p') {
+      return ['Arka Kamera: 48 MP + 13 MP + 2 MP', 'Ön Kamera: 16 MP'];
+    } else if (model === 'galaxya51') {
+      return ['Arka Kamera: 48 MP + 12 MP + 5 MP + 5 MP', 'Ön Kamera: 32 MP'];
+    } else if (model === 'mi8') {
+      return ['Arka Kamera: 12 MP + 12 MP', 'Ön Kamera: 20 MP'];
+    } else if (model === 'honormagic6pro') {
+      return ['Arka Kamera: 50 MP + 50 MP + 180 MP', 'Ön Kamera: 50 MP'];
+    } else if (model === 'redminote12pro') {
+      return ['Arka Kamera: 108 MP + 8 MP + 2 MP + 2 MP', 'Ön Kamera: 16 MP'];
+    } else if (model === 'phone2') {
+      return ['Arka Kamera: 50 MP + 50 MP', 'Ön Kamera: 32 MP'];
+    } else if (model === 'realmegt5') {
+      return ['Arka Kamera: 50 MP + 8 MP + 2 MP', 'Ön Kamera: 16 MP'];
+    } else if (model === 'findx5') {
+      return ['Arka Kamera: 50 MP + 50 MP + 13 MP', 'Ön Kamera: 32 MP'];
+    } else {
+      return [];
+    }
+  }
+</script>
+
+</body>
+<footer class="footer text-muted text-center">
+  <div class="container">
+      &copy; 2024 - Telefoncum.net - Deniz Samet Kocabacak - 223531046
+  </div>
+</footer>
+</html>
